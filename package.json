@@ -20,14 +20,14 @@
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
-    "prepublishOnly": "node -e \"const fs=require('fs'),p=JSON.parse(fs.readFileSync('package.json','utf8'));['linux-x64','linux-arm64','darwin-x64','darwin-arm64','windows-x64'].forEach(t=>{p.optionalDependencies['create-expressit-'+t]=p.version});fs.writeFileSync('package.json',JSON.stringify(p,null,2)+'\\n')\""
+    "prepublishOnly": "node -e \"const fs=require('fs'),p=JSON.parse(fs.readFileSync('package.json','utf8'));['linux-x64','linux-arm64','darwin-x64','darwin-arm64','windows-x64'].forEach(t=>{p.optionalDependencies['expressit-'+t]=p.version});fs.writeFileSync('package.json',JSON.stringify(p,null,2)+'\\n')\""
   },
   "optionalDependencies": {
-    "create-expressit-linux-x64": "1.0.0",
-    "create-expressit-linux-arm64": "1.0.0",
-    "create-expressit-darwin-x64": "1.0.0",
-    "create-expressit-darwin-arm64": "1.0.0",
-    "create-expressit-windows-x64": "1.0.0"
+    "expressit-linux-x64": "1.0.0",
+    "expressit-linux-arm64": "1.0.0",
+    "expressit-darwin-x64": "1.0.0",
+    "expressit-darwin-arm64": "1.0.0",
+    "expressit-windows-x64": "1.0.0"
   },
   "dependencies": {
     "@clack/prompts": "^1.5.1",

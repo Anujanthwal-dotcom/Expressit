@@ -35,7 +35,7 @@ jobs:
             os: macos-13
           - target: darwin-arm64
             os: macos-latest
-          - target: win32-x64
+          - target: windows-x64
             os: windows-latest
     runs-on: ${{ matrix.os }}
     permissions:

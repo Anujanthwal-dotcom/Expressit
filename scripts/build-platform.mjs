@@ -11,7 +11,7 @@ const targets = {
   'linux-arm64': { os: 'linux', arch: 'arm64' },
   'darwin-x64': { os: 'darwin', arch: 'x64' },
   'darwin-arm64': { os: 'darwin', arch: 'arm64' },
-  'win32-x64': { os: 'win32', arch: 'x64' },
+  'windows-x64': { os: 'win32', arch: 'x64' },
 }
 
 const pkgJson = JSON.parse(readFileSync(resolve(__dirname, '..', 'package.json'), 'utf8'))
@@ -37,7 +37,7 @@ writeFileSync(
   resolve(outDir, 'package.json'),
   `${JSON.stringify(
     {
-      name: `create-expressit-${targetKey}`,
+      name: `expressit-${targetKey}`,
       version: pkgJson.version,
       private: false,
       os: [target.os],

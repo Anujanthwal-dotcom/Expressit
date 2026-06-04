@@ -5,11 +5,11 @@ import { arch, platform } from 'node:os'
 import { resolve } from 'node:path'
 
 const knownPlatforms = {
-  'linux-x64': 'create-expressit-linux-x64',
-  'linux-arm64': 'create-expressit-linux-arm64',
-  'darwin-x64': 'create-expressit-darwin-x64',
-  'darwin-arm64': 'create-expressit-darwin-arm64',
-  'win32-x64': 'create-expressit-windows-x64',
+  'linux-x64': 'expressit-linux-x64',
+  'linux-arm64': 'expressit-linux-arm64',
+  'darwin-x64': 'expressit-darwin-x64',
+  'darwin-arm64': 'expressit-darwin-arm64',
+  'win32-x64': 'expressit-windows-x64',
 }
 
 const pkgKey = `${platform()}-${arch()}`
