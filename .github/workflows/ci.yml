@@ -47,7 +47,14 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build:platform ${{ matrix.target }}
-      - run: bun publish --access public
+      - run: |
+          PKG_NAME=$(node -e "console.log(require('./package.json').name)")
+          PKG_VERSION=$(node -e "console.log(require('./package.json').version)")
+          if npm view "$PKG_NAME@$PKG_VERSION" version &>/dev/null; then
+            echo "Package $PKG_NAME@$PKG_VERSION already published, skipping"
+          else
+            bun publish --access public
+          fi
         working-directory: platform-packages/${{ matrix.target }}
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -70,6 +77,13 @@ jobs:
         with:
           files: dist/expressit
           generate_release_notes: true
-      - run: bun publish
+      - run: |
+          PKG_NAME=$(node -e "console.log(require('./package.json').name)")
+          PKG_VERSION=$(node -e "console.log(require('./package.json').version)")
+          if npm view "$PKG_NAME@$PKG_VERSION" version &>/dev/null; then
+            echo "Package $PKG_NAME@$PKG_VERSION already published, skipping"
+          else
+            bun publish
+          fi
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
