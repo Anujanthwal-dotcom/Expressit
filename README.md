@@ -1,9 +1,9 @@
-# create-expressit
+# expressit
 
 Scaffold a modern Express.js project with zero config.
 
 ```bash
-npx create-expressit
+npx @anujthecreator/expressit
 ```
 
 ## Features
@@ -19,7 +19,7 @@ npx create-expressit
 ## Usage
 
 ```bash
-npx create-expressit my-app
+npx @anujthecreator/expressit my-app
 cd my-app
 npm run dev
 ```
@@ -27,7 +27,7 @@ npm run dev
 Or run interactively:
 
 ```bash
-npx create-expressit
+npx @anujthecreator/expressit
 ```
 
 ## Development

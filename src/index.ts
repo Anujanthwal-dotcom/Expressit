@@ -6,13 +6,13 @@ import { promptUser } from './prompts.js'
 import { scaffold } from './scaffold.js'
 
 async function main() {
-  const cli = cac('create-expressit')
+  const cli = cac('expressit')
 
   cli
     .command('[project-directory]', 'Create a new Express project')
     .action(async (projectDirectory: string | undefined) => {
       console.log(BANNER)
-      intro(pc.inverse(' create-expressit '))
+      intro(pc.inverse(' expressit '))
 
       try {
         const options = await promptUser(projectDirectory)
