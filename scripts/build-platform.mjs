@@ -7,11 +7,11 @@ import { fileURLToPath } from 'node:url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const targets = {
-  'linux-x64': { os: 'linux', arch: 'x64' },
-  'linux-arm64': { os: 'linux', arch: 'arm64' },
-  'darwin-x64': { os: 'darwin', arch: 'x64' },
-  'darwin-arm64': { os: 'darwin', arch: 'arm64' },
-  'windows-x64': { os: 'win32', arch: 'x64' },
+  'linux-x64': { os: 'linux', arch: 'x64', bunTarget: 'bun-linux-x64' },
+  'linux-arm64': { os: 'linux', arch: 'arm64', bunTarget: 'bun-linux-arm64' },
+  'darwin-x64': { os: 'darwin', arch: 'x64', bunTarget: 'bun-darwin-x64' },
+  'darwin-arm64': { os: 'darwin', arch: 'arm64', bunTarget: 'bun-darwin-arm64' },
+  'windows-x64': { os: 'win32', arch: 'x64', bunTarget: 'bun-windows-x64' },
 }
 
 const pkgJson = JSON.parse(readFileSync(resolve(__dirname, '..', 'package.json'), 'utf8'))
@@ -28,7 +28,7 @@ const outDir = resolve(__dirname, '..', 'platform-packages', targetKey)
 if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true })
 
 const outfile = resolve(outDir, binaryName.replace(/\.exe$/, ''))
-execSync(`bun build --compile src/index.ts --outfile "${outfile}"`, {
+execSync(`bun build --compile --target=${target.bunTarget} src/index.ts --outfile "${outfile}"`, {
   stdio: 'inherit',
   cwd: resolve(__dirname, '..'),
 })
