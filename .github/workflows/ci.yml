@@ -55,6 +55,7 @@ jobs:
           else
             bun publish --access public
           fi
+        shell: bash
         working-directory: platform-packages/${{ matrix.target }}
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
