@@ -1,6 +1,6 @@
 {
   "name": "@anujthecreator/expressnow",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "type": "module",
   "bin": {
     "expressit": "./bin.js"
