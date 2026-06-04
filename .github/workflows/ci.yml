@@ -84,7 +84,7 @@ jobs:
           if npm view "$PKG_NAME@$PKG_VERSION" version &>/dev/null; then
             echo "Package $PKG_NAME@$PKG_VERSION already published, skipping"
           else
-            bun publish
+            bun publish --access public
           fi
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
