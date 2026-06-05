@@ -2,10 +2,6 @@
 
 Scaffold a modern Express.js project with zero config.
 
-```bash
-npx @anujthecreator/expressit
-```
-
 ## Features
 
 - **Interactive prompts** — Project name, language, databases, package manager
@@ -16,18 +12,83 @@ npx @anujthecreator/expressit
 - **Modern tooling** — ES modules, strict TypeScript, tsx for dev server
 - **Package manager agnostic** — Works with npm, yarn, pnpm, or bun
 
-## Usage
+## Installation
 
-```bash
-npx @anujthecreator/expressit my-app
-cd my-app
-npm run dev
-```
-
-Or run interactively:
+### Run without installation (recommended)
 
 ```bash
 npx @anujthecreator/expressit
+```
+
+### Install globally via npm
+
+```bash
+npm install -g @anujthecreator/expressit
+```
+
+Or with other package managers:
+
+```bash
+yarn global add @anujthecreator/expressit
+pnpm add -g @anujthecreator/expressit
+bun add -g @anujthecreator/expressit
+```
+
+Once installed, use the `expressit` command directly:
+
+```bash
+expressit
+```
+
+### Prebuilt binary
+
+Prebuilt binaries are available for Linux (x64, arm64), macOS (x64, arm64), and Windows (x64). They are pulled automatically when you install the package — no additional setup required.
+
+## Usage
+
+### Interactive mode (recommended for first use)
+
+```bash
+npx @anujthecreator/expressit
+```
+
+Prompts you for project name, language, databases, package manager, and dependency installation.
+
+### With a project name
+
+```bash
+npx @anujthecreator/expressit my-app
+```
+
+Skips the project name prompt and immediately asks for language, database, and other options.
+
+### In the current directory
+
+```bash
+npx @anujthecreator/expressit .
+```
+
+Scaffolds the project in the current directory instead of creating a new folder.
+
+### Using the global command
+
+```bash
+expressit
+expressit my-app
+expressit .
+```
+
+### View help
+
+```bash
+npx @anujthecreator/expressit --help
+```
+
+### Next steps
+
+```bash
+cd my-app
+npm run dev
 ```
 
 ## Development
